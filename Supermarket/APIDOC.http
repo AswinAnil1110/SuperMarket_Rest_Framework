@@ -1,0 +1,82 @@
+#API for ProductListCreateView
+###
+GET http://127.0.0.1:8000/store/products/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/store/products/
+Content-Type: application/json
+
+{
+    "product_name" : "Lays",
+    "category" : "Chips",
+    "price" : 30,
+    "production_date" : "2027-01-20",
+    "expiry_date" : "2028-01-20",
+    "stock" : 30
+}
+
+# API for ProductRetriveUpdateDeleteView
+###
+GET http://127.0.0.1:8000/store/products/3/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/store/products/3/
+Content-Type: application/json
+
+{
+    "product_name" : "Lays",
+    "category" : "Chips",
+    "price" : 25,
+    "production_date" : "2027-5-23",
+    "expiry_date" : "2028-01-20",
+    "stock" : 60
+}
+
+###
+DELETE http://127.0.0.1:8000/store/products/2/
+
+#API for OrderListCreateView
+###
+GET http://127.0.0.1:8000/store/orders/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/store/orders/
+Content-Type: application/json
+
+{
+    "customer_name" : "Hari",
+    "product_id" : 1,
+    "quantity" : 2,
+    "payment_type" : "upi"
+}
+
+#API for OrderRetriveUpdateDeleteView
+###
+GET http://127.0.0.1:8000/store/orders/2/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/store/orders/3/
+Content-Type: application/json
+
+{
+    "customer_name" : "Manu",
+    "product_id" : 1,
+    "quantity" : 6,
+    "payment_type" : "cash"
+}
+
+###
+DELETE http://127.0.0.1:8000/store/orders/3/
+
+#API for OrderEvaluate
+###
+PUT http://127.0.0.1:8000/store/orders/2/evaluate/
+Content-Type: application/json
+
+{
+    "status":"paid"
+}
